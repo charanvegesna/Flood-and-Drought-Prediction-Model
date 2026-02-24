@@ -57,10 +57,5 @@ Notes & assumptions
 - The CSV filename must match exactly as used in `app.py`.
 - `templates/index.html` contains a simple Chart.js chart for monthly averages.
 
-If you want, I can:
-- add a `requirements.txt` and `.gitignore`;
-- move model training to a separate script and save a trained model to disk;
-- or containerize the app with a Dockerfile.
-
 ---
 Created/updated README for this project.
