@@ -12,7 +12,7 @@ This project uses the Kaggle dataset "Rainfall in India 1901-2015" by aravindpco
 
 https://www.kaggle.com/datasets/aravindpcoder/rainfall-in-india-1901-2015
 
-I downloaded the CSV from that Kaggle dataset and saved it here as `rainfall in india 1901-2015.csv`.
+We downloaded the CSV from that Kaggle dataset and saved it here as `rainfall in india 1901-2015.csv`.
 
 How the app works
 - The CSV is loaded and cleaned in `app.py`.
