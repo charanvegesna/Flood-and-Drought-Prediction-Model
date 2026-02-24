@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Flood & Drought Predictor</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h2>Flood and Drought Risk Prediction</h2>
+
+<form method="POST">
+
+<label>Select Location:</label>
+
+<select name="location" required>
+
+{% for loc in locations %}
+
+<option value="{{loc}}"
+{% if loc == selected_location %} selected {% endif %}
+>
+{{loc}}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<label>Select Month:</label>
+
+<select name="month">
+
+{% for m in months %}
+<option value="{{m}}">{{m}}</option>
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+
+<h3>Predicted Rainfall: {{prediction}} mm</h3>
+
+<h3>Risk Level: {{risk}}</h3>
+
+<h3>Monthly Rainfall Chart</h3>
+
+<canvas id="rainChart" width="600" height="300"></canvas>
+
+<script>
+
+const ctx = document.getElementById('rainChart');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: {{months | safe}},
+
+datasets: [{
+
+label: 'Average Rainfall (mm)',
+
+data: {{chart_data | safe}}
+
+}]
+
+}
+
+});
+
+</script>
+
+{% endif %}
+
+</body>
+
+</html>
