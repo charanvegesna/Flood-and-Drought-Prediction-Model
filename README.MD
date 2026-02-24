@@ -56,6 +56,3 @@ Notes & assumptions
 - The app trains a model at startup (quick but not optimized for production).
 - The CSV filename must match exactly as used in `app.py`.
 - `templates/index.html` contains a simple Chart.js chart for monthly averages.
-
----
-Created/updated README for this project.
